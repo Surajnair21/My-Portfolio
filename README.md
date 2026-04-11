@@ -43,27 +43,6 @@ npm install
 npm start            # http://localhost:5000
 ```
 
-### 4. Add your CV files
-Place CV files in:
-```
-server/files/SurajNair_CV.pdf
-server/files/SurajNair_CV.docx
-```
-
----
-
-## Environment Variables
-
-**server/.env** (never commit this file):
-```
-PORT=5000
-MONGO_URI=mongodb+srv://<user>:<password>@cluster.mongodb.net/portfolio
-CLIENT_URL=https://your-frontend.vercel.app
-NODE_ENV=production
-```
-
----
-
 ## Deployment
 
 ### Frontend → Vercel
