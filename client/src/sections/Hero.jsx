@@ -201,7 +201,7 @@ export default function Hero() {
           </button>
 
           <a
-            href="/api/download/pdf"
+            href={`${import.meta.env.VITE_API_URL || ''}/api/download/pdf`}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-secondary"
