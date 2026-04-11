@@ -51,12 +51,14 @@ export default function Hero() {
       style={{
         position: 'relative',
         width: '100%',
-        height: '100vh',
+        minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         overflow: 'hidden',
         background: 'var(--bg)',
+        paddingTop: '80px',
+        boxSizing: 'border-box'
       }}
     >
       {/* Grid dots */}
@@ -82,8 +84,34 @@ export default function Hero() {
       {/* Hero Content */}
       <div style={{
         position: 'relative', zIndex: 10, textAlign: 'center',
-        maxWidth: '900px', padding: '0 2rem'
+        maxWidth: '900px', padding: '0 2rem', marginTop: '20px'
       }}>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.1, duration: 0.8, type: 'spring' }}
+          style={{
+            width: '140px',
+            height: '140px',
+            margin: '0 auto 1.5rem auto',
+            borderRadius: '50%',
+            overflow: 'hidden',
+            border: '2px solid var(--cyan)',
+            boxShadow: '0 0 25px rgba(0, 242, 255, 0.4)',
+            background: 'rgba(0, 242, 255, 0.05)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}
+        >
+          <img 
+            src="/profile.jpg" 
+            alt="Suraj Nair" 
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+            onError={(e) => { e.target.src = 'https://ui-avatars.com/api/?name=Suraj+Nair&background=0f172a&color=00f2ff&size=140' }}
+          />
+        </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
