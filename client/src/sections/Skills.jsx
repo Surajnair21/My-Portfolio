@@ -106,16 +106,8 @@ export default function Skills() {
   const cat = skillCategories[activeCategory]
 
   return (
-    <section id="skills" style={{ padding: '8rem 0', background: 'linear-gradient(180deg, var(--bg) 0%, rgba(13,13,23,0.5) 50%, var(--bg) 100%)', position: 'relative', overflow: 'hidden' }}>
-      {/* Nebula glow */}
-      <div style={{
-        position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)',
-        width: 600, height: 600, borderRadius: '50%',
-        background: `radial-gradient(circle, ${cat.color}08 0%, transparent 70%)`,
-        pointerEvents: 'none', transition: 'background 0.5s',
-      }} />
-
-      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 2rem' }}>
+    <section id="skills" style={{ padding: '8rem 0', position: 'relative', overflow: 'hidden' }}>
+      <div className="glass-panel section-card" style={{ maxWidth: 1200, margin: '0 auto' }}>
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

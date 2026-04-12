@@ -108,8 +108,8 @@ function CertCard({ cert, index }) {
 
 export default function Certifications() {
   return (
-    <section id="certifications" style={{ padding: '8rem 0', background: 'linear-gradient(180deg, var(--bg) 0%, rgba(13,13,23,0.8) 100%)', position: 'relative' }}>
-      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 2rem' }}>
+    <section id="certifications" style={{ padding: '8rem 0', position: 'relative' }}>
+      <div className="glass-panel section-card" style={{ maxWidth: 1200, margin: '0 auto' }}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

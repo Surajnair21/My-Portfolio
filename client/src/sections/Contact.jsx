@@ -102,7 +102,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" style={{ padding: '8rem 0', background: 'var(--bg)', position: 'relative', overflow: 'hidden' }}>
+    <section id="contact" style={{ padding: '8rem 0', position: 'relative', overflow: 'hidden' }}>
       {/* Particle burst overlay */}
       {particles.map(p => (
         <motion.div
@@ -118,19 +118,7 @@ export default function Contact() {
         />
       ))}
 
-      {/* Background glows */}
-      <div style={{
-        position: 'absolute', top: 0, left: 0, width: 600, height: 600,
-        background: 'radial-gradient(circle, rgba(0,242,255,0.04) 0%, transparent 70%)',
-        pointerEvents: 'none',
-      }} />
-      <div style={{
-        position: 'absolute', bottom: 0, right: 0, width: 600, height: 600,
-        background: 'radial-gradient(circle, rgba(112,0,255,0.04) 0%, transparent 70%)',
-        pointerEvents: 'none',
-      }} />
-
-      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 2rem' }}>
+      <div className="glass-panel section-card" style={{ maxWidth: 1200, margin: '0 auto' }}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

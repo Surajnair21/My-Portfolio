@@ -174,14 +174,8 @@ export default function Projects() {
   const [active, setActive] = useState(null)
 
   return (
-    <section id="projects" style={{ padding: '8rem 0', background: 'var(--bg)', position: 'relative' }}>
-      <div style={{
-        position: 'absolute', bottom: 0, right: 0, width: 600, height: 400,
-        background: 'radial-gradient(ellipse at bottom right, rgba(112,0,255,0.06) 0%, transparent 70%)',
-        pointerEvents: 'none',
-      }} />
-
-      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 2rem' }}>
+    <section id="projects" style={{ padding: '8rem 0', position: 'relative' }}>
+      <div className="glass-panel section-card" style={{ maxWidth: 1200, margin: '0 auto' }}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

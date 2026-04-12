@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Navbar from './components/ui/Navbar'
 import LoadingScreen from './components/ui/LoadingScreen'
 import useLenis from './hooks/useLenis'
+import useMousePosition from './hooks/useMousePosition'
 
 // Theme Context for Dark/Light mode
 export const ThemeContext = createContext({ theme: 'dark', toggleTheme: () => {} })
@@ -17,6 +18,21 @@ const Experience = lazy(() => import('./sections/Experience'))
 const Certifications = lazy(() => import('./sections/Certifications'))
 const Contact = lazy(() => import('./sections/Contact'))
 
+const HeroScene = lazy(() => import('./components/three/HeroScene'))
+
+const GlobalBackground = () => {
+  const mouseRef = useMousePosition()
+  
+  return (
+    <div style={{ position: 'fixed', inset: 0, zIndex: -1, background: 'var(--bg)', overflow: 'hidden' }}>
+      <div className="grid-dots" />
+      <Suspense fallback={null}>
+        <HeroScene mouseRef={mouseRef} />
+      </Suspense>
+    </div>
+  )
+}
+
 function HomePage() {
   return (
     <Suspense fallback={
@@ -24,7 +40,7 @@ function HomePage() {
         <div style={{ width: 2, height: 40, background: 'var(--cyan)', animation: 'pulse 1s infinite' }} />
       </div>
     }>
-      <main>
+      <main style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', gap: '2rem', paddingBottom: '4rem' }}>
         <Hero />
         <About />
         <Skills />
@@ -62,6 +78,7 @@ export default function App() {
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      <GlobalBackground />
       <BrowserRouter>
         <AnimatePresence>
           {!loaded && <LoadingScreen onComplete={handleLoadComplete} />}

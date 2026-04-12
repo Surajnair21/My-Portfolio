@@ -141,16 +141,8 @@ function TimelineEntry({ item, index }) {
 
 export default function Experience() {
   return (
-    <section id="experience" style={{ padding: '8rem 0', background: 'var(--bg)', position: 'relative', overflow: 'hidden' }}>
-      {/* Glow top */}
-      <div style={{
-        position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)',
-        width: 800, height: 300,
-        background: 'radial-gradient(ellipse, rgba(0,242,255,0.05) 0%, transparent 70%)',
-        pointerEvents: 'none',
-      }} />
-
-      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 2rem' }}>
+    <section id="experience" style={{ padding: '8rem 0', position: 'relative', overflow: 'hidden' }}>
+      <div className="glass-panel section-card" style={{ maxWidth: 1200, margin: '0 auto' }}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
