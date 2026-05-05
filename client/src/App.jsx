@@ -18,17 +18,24 @@ const Experience = lazy(() => import('./sections/Experience'))
 const Certifications = lazy(() => import('./sections/Certifications'))
 const Contact = lazy(() => import('./sections/Contact'))
 
-const HeroScene = lazy(() => import('./components/three/HeroScene'))
-
 const GlobalBackground = () => {
-  const mouseRef = useMousePosition()
-  
   return (
-    <div style={{ position: 'fixed', inset: 0, zIndex: -1, background: 'var(--bg)', overflow: 'hidden' }}>
-      <div className="grid-dots" />
-      <Suspense fallback={null}>
-        <HeroScene mouseRef={mouseRef} />
-      </Suspense>
+    <div style={{ position: 'fixed', inset: 0, zIndex: -1, background: '#000', overflow: 'hidden' }}>
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        style={{
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          opacity: 0.8,
+        }}
+      >
+        <source src="/nebula.mp4" type="video/mp4" />
+      </video>
+      <div className="grid-dots" style={{ position: 'absolute', inset: 0, opacity: 0.5 }} />
     </div>
   )
 }

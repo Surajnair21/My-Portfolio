@@ -38,17 +38,11 @@ export default defineConfig({
           if (id.includes('node_modules/react') || id.includes('node_modules/react-dom') || id.includes('node_modules/react-router-dom')) {
             return 'vendor-react'
           }
-          if (id.includes('node_modules/three') || id.includes('node_modules/@react-three')) {
-            return 'vendor-three'
-          }
           if (id.includes('node_modules/framer-motion') || id.includes('node_modules/gsap') || id.includes('node_modules/lenis')) {
             return 'vendor-animation'
           }
         },
       },
     },
-  },
-  optimizeDeps: {
-    include: ['three', '@react-three/fiber', '@react-three/drei'],
   },
 })
