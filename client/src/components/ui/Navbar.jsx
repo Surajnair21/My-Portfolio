@@ -35,8 +35,11 @@ export default function Navbar() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
         style={{
-          borderBottom: scrolled ? '1px solid rgba(0,242,255,0.12)' : '1px solid transparent',
-          background: scrolled ? 'var(--nav-bg)' : 'transparent',
+          borderBottom: scrolled ? '1px solid rgba(0, 242, 255, 0.2)' : '1px solid transparent',
+          background: scrolled ? 'rgba(3, 3, 10, 0.4)' : 'transparent',
+          backdropFilter: scrolled ? 'blur(16px) saturate(150%)' : 'none',
+          WebkitBackdropFilter: scrolled ? 'blur(16px) saturate(150%)' : 'none',
+          boxShadow: scrolled ? '0 10px 30px rgba(0, 242, 255, 0.05)' : 'none',
         }}
       >
         <a href="#hero" className="nav-logo" onClick={(e) => handleNavClick(e, '#hero')}>

@@ -74,7 +74,9 @@ export default function Hero() {
       {/* Hero Content */}
       <div style={{
         position: 'relative', zIndex: 10, textAlign: 'center',
-        maxWidth: '900px', padding: '0 2rem', marginTop: '20px'
+        maxWidth: '900px', padding: '4rem 2rem', marginTop: '20px',
+        background: 'radial-gradient(circle at center, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 70%)',
+        borderRadius: '50%'
       }}>
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
@@ -139,6 +141,7 @@ export default function Hero() {
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
             marginBottom: '1.5rem',
+            filter: 'drop-shadow(0 0 30px rgba(0, 242, 255, 0.4))'
           }}
         >
           SURAJ<br />NAIR
